@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+  <html>
+  <head>
+    <title>Language Ignition: Python</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+  </head>
+  <body>
+    <div class="main">
+      <h1>Language ignition</h1>
+    
+      <h2>Python</h2>
+      
+      <ul>
+        <li><a href="#installation">Installation</a></li>
+        <li><a href="#start-new-project">Start a new project</a></li>
+        <li><a href="#initialise-your-project">Initialise your project</a></li>
+        <li><a href="#install-library">Install a library</a></li>
+        <li><a href="#install-cli-tool">Install a command-line tool</a></li>
+      </ul>
+      
+      <p>
+        Example text has a <span class="example">yellow background</span>.
+        You should replace the example text with the appropriate text for your situation.
+      </p>
+      
+      <p>
+        Suggested text has a <span class="suggestion">blue background</span>.
+        The suggested text should work fine,
+        but you can replace it with an alternative of your choosing if you like.
+      </p>
+      
+      <h3 id="installation">Installation</h3>
+      
+      <pre><code># apt-get install python python-dev python-virtualenv</code></pre>
+      
+      <h3 id="start-new-project">Start a new project</h3>
+      
+      <p>Create a file called <code>README</code> that describes your project to a human using reStructuredText.</p>
+      
+      <p>Create a file called <code>setup.py</code> that contains meta-data for your project. Include any dependencies in the <code>install_requires</code> field.</p>
+      
+      <pre><code>#!/usr/bin/env python
+
+import os
+from setuptools import setup
+
+def read(fname):
+    return open(os.path.join(os.path.dirname(__file__), fname)).read()
+
+setup(
+    name=<span class="example">'languageignition'</span>,
+    version=<span class="example">'0.1.0'</span>,
+    description=<span class="example">'Get started with a new language'</span>,
+    long_description=read("README"),
+    author=<span class="example">'Michael Williamson'</span>,
+    author_url=<span class="example">'mike@zwobble.org'</span>,
+    url=<span class="example">'http://github.com/mwilliamson/language-ignition.com'</span>,
+    packages=[<span class="example">'languageignition'</span>],
+    install_requires=[
+        <span class="example">'requests>=1.0,<2.0'</span>,
+    ],
+    license=<span class="example">'BSD 2-Clause'</span>,
+)</code></pre>
+
+      <p>Create a file called <code><span class="suggestion">test-requirements.txt</span></code> that contains test dependencies:</p>
+      
+      <pre><code><span class="example">nose>=1.3,<2.0
+mock>=1.0,<2.0</span></code></pre>
+      
+      <h3 id="initialise-your-project">Initialise your project</h3>
+      
+      <p>Make sure you're at the root of your project, which should contain <code>setup.py</code></p>
+      
+      <p>Create a virtualenv if you haven't already:</p>
+      
+      <pre><code>$ virtualenv <span class="suggestion">venv</span>
+$ <span class="suggestion">venv</span>/bin/pip install distribute --upgrade</code></pre>
+
+      <p>Install your project and its dependencies into the virtualenv:</p>
+      
+      <pre><code>$ <span class="suggestion">venv</span>/bin/pip install -e .</code></pre>
+      
+      <p>Install test dependencies into the virtualenv:</p>
+      
+      <pre><code>$ <span class="suggestion">venv</span>/bin/pip install -r <span class="suggestion">test-requirements.txt</span></code></pre>
+      
+      <h3 id="install-library">Install a library</h3>
+      
+      <p>Let's assume we want to install <span class="example">requests</span>.</p>
+      
+      <p>Create a virtualenv if you haven't already:</p>
+      
+      <pre><code>$ virtualenv <span class="suggestion">venv</span>
+$ <span class="suggestion">venv</span>/bin/pip install distribute --upgrade</code></pre>
+      
+      <p>Install the library in the virtualenv:</p>
+      
+      <pre><code>$ <span class="suggestion">venv</span>/bin/pip install <span class="example">requests</span></code></pre>
+      
+      <h3 id="install-cli-tool">Install a command-line tool</h3>
+      
+      <p>Let's assume we want to install <span class="example">tox</span>.</p>
+      
+      <p>Create a virtualenv for that tool:</p>
+      
+      <pre><code>$ mkdir -p <span class="suggestion">~/apps</span>
+$ virtualenv <span class="suggestion">~/apps</span>/<span class="example">tox</span>
+$ <span class="suggestion">~/apps</span>/<span class="example">tox</span>/bin/pip install distribute --upgrade</code></pre>
+
+      <p>Install the tool in the virtualenv:</p>
+      
+      <pre><code>$ <span class="suggestion">~/apps</span>/<span class="example">tox</span>/bin/pip install <span class="example">tox</span></code></pre>
+      
+      <p>Run the tool:</p>
+      
+      <pre><code>$ <span class="suggestion">~/apps</span>/<span class="example">tox</span>/bin/<span class="example">tox</span></code></pre>
+      
+      <p>Optionally create a symlink in a directory that's on your <code>$PATH</code>. Assuming <span class="example">~/bin</span> is on your path:</p>
+      
+      <pre><code>$ ln -s <span class="suggestion">~/apps</span>/<span class="example">tox</span>/bin/<span class="example">tox</span> <span class="example">~/bin<span></code></pre>
+      
+    </div>
+  </body>
+</html>
+

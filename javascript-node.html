@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+  <html>
+  <head>
+    <title>Language Ignition: JavaScript (node.js)</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+  </head>
+  <body>
+    <div class="main">
+      <h1>Language ignition</h1>
+    
+      <h2>JavaScript (node.js)</h2>
+      
+      <ul>
+        <li><a href="#installation">Installation</a></li>
+        <li><a href="#start-new-project">Start a new project</a></li>
+        <li><a href="#initialise-your-project">Initialise your project</a></li>
+        <li><a href="#install-library">Install a library</a></li>
+        <li><a href="#install-cli-tool">Install a command-line tool</a></li>
+      </ul>
+      
+      <p>
+        Example text has a <span class="example">yellow background</span>.
+        You should replace the example text with the appropriate text for your situation.
+      </p>
+      
+      <p>
+        Suggested text has a <span class="suggestion">blue background</span>.
+        The suggested text should work fine,
+        but you can replace it with an alternative of your choosing if you like.
+      </p>
+      
+      <h3 id="installation">Installation</h3>
+      
+      <p>Download and untar the appropriate tarball from <a href="http://nodejs.org">nodejs.org</a>,
+      and add symlinks for the programs to a directory on your PATH.
+      Assuming you're on x86-64 Linux and <code><span class="suggestion">~/bin</span></code> is on your path:</p>
+      
+      <pre><code>$ mkdir -p <span class="suggestion">~/apps/node</span>
+$ cd <span class="suggestion">~/apps/node</span>
+$ wget http://nodejs.org/dist/<span class="suggestion">v0.10.16</span>/node-<span class="suggestion">v0.10.16-linux-x64</span>.tar.gz
+$ tar xzf node-<span class="suggestion">v0.10.16-linux-x64</span>.tar.gz
+$ ln -s node-<span class="suggestion">v0.10.16-linux-x64</span> current
+$ ln -s <span class="suggestion">~/apps/node</span>/current/bin/node ~/bin
+$ ln -s <span class="suggestion">~/apps/node</span>/current/bin/npm ~/bin</code></pre>
+      
+      <p>
+      
+      <h3 id="start-new-project">Start a new project</h3>
+      
+      <p>Create a file called <code>README.md</code> that describes your project to a human using Markdown.</p>
+      
+      <p>Create a file called <code>package.json</code> that contains meta-data for your project.</p>
+      
+      <pre><code>{
+    "name": <span class="example">"language-ignition"</span>,
+    "version": <span class="example">"0.1.0"</span>,
+    "author": <span class="example">"Michael Williamson &lt;mike@zwobble.org&gt;"</span>,
+    "description": <span class="example">"Get started with a new language"</span>,
+    "keywords": <span class="example">["language"]</span>,
+    "main": "./lib/index.js",
+    "repository": {
+        "type": "git",
+        "url": <span class="example">"https://github.com/mwilliamson/patter.git"</span>
+    },
+    "dependencies": {
+        <span class="example">"promise": "~2.0.0"</span>
+    },
+    "devDependencies": {
+        <span class="example">"nodeunit": "~0.8.0"</span>
+    },
+    "license": <span class="example">"BSD"</span>,
+    "scripts": {
+        <span class="example">"test": "nodeunit tests"</span>
+    }
+}</code></pre>
+
+      <h3 id="initialise-your-project">Initialise your project</h3>
+      
+      <p>Make sure you're at the root of your project, which should contain <code>package.json</code></p>
+      
+      <pre><code>$ npm install</code></pre>
+      
+      <h3 id="install-library">Install a library</h3>
+      
+      <p>Let's assume we want to install <span class="example">promise</span>.</p>
+      
+      <pre><code>$ npm install <span class="example">promise</span></code></pre>
+      
+      <h3 id="install-cli-tool">Install a command-line tool</h3>
+      
+      <p>Let's assume we want to install <span class="example">browserify</span>.</p>
+      
+      <p>Create a directory to install the tool, including a <code>node_modules</code> sub-directory:</p>
+      
+      <pre><code>$ mkdir -p <span class="suggestion">~/apps</span>/<span class="example">browserify</span>/node_modules</code></pre>
+
+      <p>Install the tool:</p>
+      
+      <pre><code>$ cd <span class="suggestion">~/apps</span>/<span class="example">browserify</span>
+$ npm install <span class="example">browserify</span></code></pre>
+      
+      <p>Run the tool:</p>
+      
+      <pre><code>$ <span class="suggestion">~/apps</span>/<span class="example">browserify</span>/node_modules/.bin/<span class="example">browserify</span></code></pre>
+      
+      <p>Optionally create a symlink in a directory that's on your <code>$PATH</code>. Assuming <span class="example">~/bin</span> is on your path:</p>
+      
+      <pre><code>$ ln -s <span class="suggestion">~/apps</span>/<span class="example">browserify</span>/node_modules/.bin/<span class="example">browserify</span> <span class="example">~/bin<span></code></pre>
+      
+    </div>
+  </body>
+</html>
+
